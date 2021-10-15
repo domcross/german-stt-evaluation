@@ -1,4 +1,4 @@
-# German STT model evalution
+# German STT model evaluation
 
 > **tl;dr:** As of October 2021 Jaco-Assistant/Scribosermo model gives you best overall performance.
 
