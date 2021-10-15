@@ -1,4 +1,4 @@
-# German STT model evalution
+# German STT model evaluation
 
 In search of a "good" STT model in german language I have evaluated all free (as in free beer and open source) models.
 
