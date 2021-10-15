@@ -4,8 +4,6 @@ In search of a "good" STT model in german language I have evaluated all free (as
 
 > **tl;dr** As of October 2021 Jaco-Assistant/Scribosermo model gives you best overall performance.
 
-<a class="github-button" href="https://github.com/domcross/german-stt-evaluation" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star domcross/german-stt-evaluation on GitHub">Star</a>
-
 |Vendor / Architecture    |Model    |WER      |CER      |RTF      |Comment  |
 |---------|---------|---------:|---------:|---------:|---------|
 | [Jaco-Assistant / Scribosermo](https://gitlab.com/Jaco-Assistant/Scribosermo)    |[full](https://www.mediafire.com/folder/jh5unptizgzou/d37cv-wer0066) / Scorer: [D37CV](https://www.mediafire.com/file/pzj8prgv2h0c8ue/kenlm_de_all.scorer/file)    |**9.43**         |3.66         | 0.078        | CPU 8 cores         |
@@ -25,5 +23,7 @@ The real time factor (RTF) has been calculated by running inference on the first
 
 Evaluation was performed on a [Nvidia Xavier
 AGX 32GB](https://developer.nvidia.com/embedded/jetson-agx-xavier-developer-kit) with JetPack 4.6, MAXN mode and jetson-clocks enabled.
+
+You like this page - then don't be shy go to the repository and click the star button: <a class="github-button" href="https://github.com/domcross/german-stt-evaluation" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star domcross/german-stt-evaluation on GitHub">Star</a>
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
