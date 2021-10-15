@@ -1,0 +1,13 @@
+---
+---
+
+@import "{{ site.theme }}";
+table, caption, tbody, tfoot, thead, tr, th, td
+{
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+  border: 1;
+}
