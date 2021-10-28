@@ -1,0 +1,18 @@
+tflite-runtime
+# in case there is no tflite-runtime package for your machine/architecture, 
+# e.g. Nvidia Jetson/Xavier you can use this:
+#--extra-index-url https://google-coral.github.io/py-repo/ tflite_runtime
+
+ds-ctcdecoder==0.9.3
+# if there is no prebuilt pip-package for your machine/architecture look in the published assets here:
+# https://github.com/mozilla/DeepSpeech/releases/tag/v0.9.3
+# or for use on a Raspberry Pi you can use the one from extras/misc directory
+# or for Nvidia Jetson/Xavier use this:
+#https://github.com/domcross/DeepSpeech-for-Jetson-Nano/releases/download/ds_ctcdecoder-0.10.0a3/ds_ctcdecoder-0.10.0a3-cp36-cp36m-manylinux2014_aarch64.whl
+
+transformers
+tqdm
+numpy
+librosa
+datasets
+jiwer
