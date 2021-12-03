@@ -1,6 +1,6 @@
 # German STT model evaluation
 
-> **tl;dr** As of October 2021 Jaco-Assistant/Scribosermo model gives you best overall performance.
+> **tl;dr** As of December 2021 NeMo-ASRs Conformer-Transducer model is the overall leader (best WER and CER) on GPU, while Jaco-Assistant/Scribosermo model is still a very good choice for CPU.
 
 In search of a "good" STT model in german language I have evaluated all free (as in free beer and open source) models.
 
@@ -13,13 +13,13 @@ In search of a "good" STT model in german language I have evaluated all free (as
 |[Silero](https://github.com/snakers4/silero-models#silero-models)     |[v4](https://models.silero.ai/models/de/de_v4_large.jit) large     | 18.98        | 6.67        | **0.009**         |  RTF is not a typo       |
 | [Wav2Vec](https://ai.facebook.com/blog/wav2vec-20-learning-the-structure-of-speech-from-raw-audio/)    |[jonatasgrosman / wav2vec2-large-xlsr-53-german](https://huggingface.co/jonatasgrosman/wav2vec2-large-xlsr-53-german)     | 10.87        |**2.68**         |   0.06      | Batchsize 1         |
 |[Vosk](https://alphacephei.com/vosk/)     | [0.21](https://alphacephei.com/vosk/models/vosk-model-de-0.21.zip)     | 12.84        | 4.56        | 0.292        |         |
-|[Nvidia NeMo-ASR](https://github.com/NVIDIA/NeMo)     | [Conformer-CTC 1.5.0](https://catalog.ngc.nvidia.com/orgs/nvidia/teams/nemo/models/stt_de_conformer_ctc_large/)     | 7.39        | 1.80        | 0.079        | GPU w/AMP        |
+|[Nvidia NeMo-ASR](https://github.com/NVIDIA/NeMo)     | [Conformer-CTC 1.5.0](https://catalog.ngc.nvidia.com/orgs/nvidia/teams/nemo/models/stt_de_conformer_ctc_large/)     | 7.39        | 1.80        | (0.079)        | GPU w/AMP (RTF to be confirmed)       |
+|Nvidia NeMo-ASR     | [Conformer-Transducer 1.5.0](https://catalog.ngc.nvidia.com/orgs/nvidia/teams/nemo/models/stt_de_conformer_transducer_large)     | **6.20**        | **1.62**        | (0.129)        | GPU w/AMP (RTF to be confirmed)       |
 
-Conclusion: both Jaco-Assistant/Scribosermo  models - full and quantized - give you best WER and decent CER at good performance on CPU. 
-Wav2Vec is runner up with best CER and good WER, but requires GPU (RTF >1.2 on CPU). Silero is blazing fast but WER of 19% makes it impractical for daily use.
+Conclusion: NeMo-ASRs Conformer-Transducer model give you best WER and CER, the Conformer-CTC is runner up with still very good values and better RTF than the Transducer model on GPU. Both Jaco-Assistant/Scribosermo  models - full and quantized - give you good WER/CER values at good performance on CPU. Silero is blazing fast but WER of 19% makes it impractical for daily use.
 
-For word error rate ([WER](https://huggingface.co/metrics/wer)) and character error rate ([CER](https://huggingface.co/metrics/cer)) the full test-dataset by Huggingface (huggingface/common_voice/de/6.1.0) has been used. 
-The real time factor (RTF) has been calculated by running inference on the first 1,000 records of the same dataset as above. Pre-processing times (loading audio files, sample rate conversion, etc.) were excluded.
+For word error rate ([WER](https://huggingface.co/metrics/wer)) and character error rate ([CER](https://huggingface.co/metrics/cer)) the full test-dataset by Huggingface (huggingface/common_voice/de/6.1.0 provided by datasets==1.13.3) has been used. 
+The real time factor (RTF) has been calculated (with jiwer==2.2.0) by running inference on the first 1,000 records of the same dataset as above. Pre-processing times (loading audio files, sample rate conversion, etc.) were excluded.
 
 Evaluation was performed on a [Nvidia Xavier
 AGX 32GB](https://developer.nvidia.com/embedded/jetson-agx-xavier-developer-kit) with JetPack 4.6, MAXN mode and jetson-clocks enabled.
