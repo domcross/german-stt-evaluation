@@ -2,7 +2,7 @@
 
 In search of a "good" STT model for German language I have evaluated all free (as in free beer and open source) models.
 
-> **tl;dr** As of December 2021 NeMo-ASRs Conformer-Transducer model is the overall leader (best WER and CER) on GPU, while Jaco-Assistant/Scribosermo model is still a very good choice for CPU.
+> **tl;dr** As of January 2022 NeMo-ASRs Conformer-Transducer model is the overall leader (best WER and CER) on GPU, while Jaco-Assistant/Scribosermo model is still a very good choice for CPU.
 
 |Vendor / Architecture    |Model    |WER      |CER      |RTF      |Comment  |
 |---------|---------|---------:|---------:|---------:|---------|
@@ -14,7 +14,8 @@ In search of a "good" STT model for German language I have evaluated all free (a
 | [Wav2Vec](https://ai.facebook.com/blog/wav2vec-20-learning-the-structure-of-speech-from-raw-audio/)    |[jonatasgrosman / wav2vec2-large-xlsr-53-german](https://huggingface.co/jonatasgrosman/wav2vec2-large-xlsr-53-german)     | 10.87        |2.68         |   0.06      | Batchsize 1         |
 |[Vosk](https://alphacephei.com/vosk/)     | [0.21](https://alphacephei.com/vosk/models/vosk-model-de-0.21.zip)     | 12.84        | 4.56        | 0.292        |         |
 |[Nvidia NeMo-ASR](https://github.com/NVIDIA/NeMo)     | [Conformer-CTC 1.5.0](https://catalog.ngc.nvidia.com/orgs/nvidia/teams/nemo/models/stt_de_conformer_ctc_large/)     | 7.39        | 1.80        | 0.064        | GPU w/[Apex-AMP](https://github.com/NVIDIA/apex)       |
-|Nvidia NeMo-ASR     | [Conformer-Transducer 1.5.0](https://catalog.ngc.nvidia.com/orgs/nvidia/teams/nemo/models/stt_de_conformer_transducer_large)     | **6.20**        | **1.62**        | 0.124        | GPU w/Apex-AMP      |
+|Nvidia NeMo-ASR     | [Conformer-Transducer 1.6.0](https://catalog.ngc.nvidia.com/orgs/nvidia/teams/nemo/models/stt_de_conformer_transducer_large)     | **5.77**        | **1.46**        | 0.127        | GPU w/Apex-AMP      |
+|Nvidia NeMo-ASR     | [Conformer-Transducer 1.5.0](https://catalog.ngc.nvidia.com/orgs/nvidia/teams/nemo/models/stt_de_conformer_transducer_large)     | 6.20        | 1.62        | 0.124        | GPU w/Apex-AMP      |
 |Nvidia NeMo-ASR     | [Citrinet-1024 1.5.0](https://catalog.ngc.nvidia.com/orgs/nvidia/teams/nemo/models/stt_de_citrinet_1024)     | 8.24        | 2.32        | 0.069        | GPU w/Apex-AMP      |
 |Nvidia NeMo-ASR     | [Contextnet-1024 1.4.0](https://catalog.ngc.nvidia.com/orgs/nvidia/teams/nemo/models/stt_de_contextnet_1024)     | 6.68        | 1.77        | 0.098        | GPU w/Apex-AMP      |
 |Nvidia NeMo-ASR     | [Quartznet-15x15 1.0.0rc1](https://catalog.ngc.nvidia.com/orgs/nvidia/teams/nemo/models/stt_de_quartznet15x5)     |13.23        | 3.53        | 0.064        | GPU w/Apex-AMP      |
