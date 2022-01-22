@@ -1,6 +1,6 @@
 In search of a "good" STT model for German language I have evaluated all free (as in free beer and open source) models.
 
-> **tl;dr** As of January 2022 NeMo-ASRs Conformer-Transducer model is the overall leader (best WER and CER) on GPU, while Jaco-Assistant/Scribosermo model is still a very good choice for CPU.
+> **tl;dr** As of January 2022 NeMo-ASRs Conformer-Transducer model is the overall leader (WER 5.77 / CER 1.46) on GPU, while Jaco-Assistant/Scribosermo model is still a very good choice for CPU (WER 9.43 / CER 3.66).
 
 |Vendor / Architecture    |Model    |WER      |CER      |RTF      |Comment  |
 |---------|---------|---------:|---------:|---------:|---------|
